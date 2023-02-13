@@ -88,7 +88,7 @@ const Home=({setUsername})=>{
           username: signUpRef.current.sign_up_username.value,
           email: signUpRef.current.sign_up_email.value,
       });
-      console.log('added')
+
   }
 
   useEffect(()=>{
@@ -96,11 +96,10 @@ const Home=({setUsername})=>{
       if(unusedUsername===signUpRef.current.sign_up_username.value){setCheck(false);setTaken(true)} 
     else{setTaken(false);setRun(true)}
     }
-    console.log('ran')
+
   },[check,unusedUsername])
 
-  console.log(taken)
-  console.log(check)
+
   
 
   //sign up authentication
@@ -117,9 +116,9 @@ const Home=({setUsername})=>{
       const user = userCredential.user;
       navigate('/chat')
     })
-    .catch((error) => {
-      console.log('error')
-    });
+    // .catch((error) => {
+
+    // });
   }
   }
   

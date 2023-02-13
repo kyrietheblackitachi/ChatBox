@@ -72,23 +72,18 @@ const Message=()=>{
         const querySnapshot = await getDocs(q)
        
         querySnapshot.forEach((doc) => {
-            console.log(doc.data())
             if(doc.data().chatId.includes(String(username))&&doc.data().chatId.includes(String(usernameInChat))){
             newArray.push(doc.data())}
             setMessageArray(newArray)
         })
-        setDocId(i=>!i) 
-        console.log(anotherArray)   
+        setDocId(i=>!i)  
     }
-    console.log(username,usernameInChat)
+
     useEffect(()=>{
-        console.log(username,usernameInChat)
         setMessage('')
         showMessage()  
     },[messageSent,usernameInChat])
-    useEffect(()=>{
-        console.log(messageArray)  
-    },[docId])
+
     const navigate=useNavigate()
 
 
@@ -96,7 +91,7 @@ const Message=()=>{
 return(
     <Box className='text'>
         <Box className='chat-username-box'>
-            <h1>{usernameInChat}</h1>
+            <h3>{usernameInChat}</h3>
         </Box>
         <Box className='messages-box'>
             <Box >
@@ -108,7 +103,7 @@ return(
                     return(
                     <div key={index}className={username==sender?'invinsible-div-sender':'invinsible-div-receiver'}>
                     <div  className={username==sender?'my-message':'your-message'}>
-                        <h4> {item.messages.message}</h4>
+                        <h5> {item.messages.message}</h5>
                         <h6 className='time'> {atTime}</h6>
                             
                     </div>

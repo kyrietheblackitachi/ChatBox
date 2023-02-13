@@ -64,7 +64,7 @@ const Chat=()=>{
    
     const addUserId =()=>{
         // const id=await updateDoc(userInfo, {id: userId });
-        console.log(userInfo)
+
     }
     useEffect(()=>{
        addUserId()
@@ -169,7 +169,7 @@ const Chat=()=>{
                 <Box className='chat-div'>
                     { self && empty && newArray.map((user,index) =>{
                         return(
-                        <div key={index}className='chats' onClick={navigateToMessage}><h2>{user}</h2></div>
+                        <div key={index}className='chats' onClick={navigateToMessage}><h5>@{user}</h5></div>
                     )
                     })}
                 </Box> 
